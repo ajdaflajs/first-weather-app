@@ -1,121 +1,150 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>WeatherAppHomework Week4</title>
     <meta charset="UTF-8" />
     <link href="src/styles.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="src/styles.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://kit.fontawesome.com/3d14812b53.js" crossorigin="anonymous"></script>
-</head>
+    <script
+      src="https://kit.fontawesome.com/3d14812b53.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <header>
-            <div class="row">
-                <div class="col-7">
-                    <div class="search">
-                        <form id="search-form">
-                            <input type="text" placeholder="Search City..." autocomplete="off" autofocus="on"
-                                class="searchCity" id="input-search-city" />
-                            <input type="submit" value="Search" class="searchClick" id="search-click" />
-                        </form>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="currentLocationButton">
-                        <button id="current-location-button">
-                            Current Location
-                        </button>
-                    </div>
-                </div>
-                <div class="col-1">
-                    <div class="searchMap">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                </div>
+      <header>
+        <div class="row">
+          <div class="col-7">
+            <div class="search">
+              <form id="search-form">
+                <input
+                  type="text"
+                  placeholder="Search City..."
+                  autocomplete="off"
+                  autofocus="on"
+                  class="searchCity"
+                  id="input-search-city"
+                />
+                <input
+                  type="submit"
+                  value="Search"
+                  class="searchClick"
+                  id="search-click"
+                />
+              </form>
             </div>
-        </header>
-        <div class="currentWeatherForecast">
-            <div class="row">
-                <div class="col-2">
-                    <div class="currentWeatherIcon">
-                        <img src="image/021-cloud.png" alt="cloudy" width="100px" />
-                    </div>
-                </div>
-                <div class="col-10">
-                    <h3 class="currentCity" id="current-city"></h3>
-                    <br />
-                    <h2 class="temperature">
-                        <strong><span id="temperature"></span></strong>
-                        <span>
-                            <a href="a" id="celsius-link">°C</a> |
-                            <a href="a" id="fahrenheit-link">°F</a></span>
-                    </h2>
-                    <br />
-                    <h5 class="currentDay" id="current-day">Sunday</h5>
-                    <h6 class="currentTime" id="current-time">
-                        <span id="current-hours">13</span>:<span id="current-minutes">40</span>
-                    </h6>
-                </div>
+          </div>
+          <div class="col-4">
+            <div class="currentLocationButton">
+              <button id="current-location-button">
+                Current Location
+              </button>
             </div>
+          </div>
+          <div class="col-1">
+            <div class="searchMap">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+          </div>
         </div>
-        <hr />
-        <div class="futureWeatherForecast">
-            <div class="row">
-                <div class="col-2">
-                    <img src="image/021-rain-1.png" alt="rain" width="50px" />
-                    <h6>Monday</h6>
+      </header>
+      <div class="currentWeatherForecast">
+        <div class="row">
+          <div class="col-2">
+            <div class="currentWeatherIcon">
+              <img src="image/021-cloud.png" alt="cloudy" width="100px" />
+            </div>
+          </div>
+          <div class="col-10">
+            <h3 class="currentCity" id="current-city"></h3>
+            <br />
+            <h2 class="temperature">
+              <strong><span id="temperature"></span></strong>
+              <span>
+                <a href="a" id="celsius-link">°C</a> |
+                <a href="a" id="fahrenheit-link">°F</a></span
+              >
+            </h2>
+            <br />
+            <h5 class="currentDay" id="current-day">Sunday</h5>
+            <h6 class="currentTime" id="current-time">
+              <span id="current-hours">13</span>:<span id="current-minutes"
+                >40</span
+              >
+            </h6>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="futureWeatherForecast">
+        <div class="row">
+          <div class="col-2">
+            <img src="image/021-rain-1.png" alt="rain" width="50px" />
+            <h6>Monday</h6>
 
-                    21 °C
-                </div>
-                <div class="col-2">
-                    <img src="image/021-snowflake.png" alt="snowflake" width="50px" />
-                    <h6>Tuesday</h6>
-                    20 °C
-                </div>
-                <div class="col-2">
-                    <img src="image/021-night.png" alt="night sky" width="50px" />
-                    <h6>Wednesday</h6>
-                    19 °C
-                </div>
-                <div class="col-2">
-                    <img src="image/021-sun.png" alt="sun" width="50px" />
-                    <h6>Thursday</h6>
-                    19 °C
-                </div>
-                <div class="col-2">
-                    <img src="image/021-tornado.png" alt="tornado" width="50px" />
-                    <h6>Friday</h6>
-                    18 °C
-                </div>
-                <div class="col-2">
-                    <img src="image/021-snowing-3.png" alt="snowing" width="50px" />
-                    <h6>Saturday</h6>
-                    17 °C
-                </div>
-            </div>
+            21 °C
+          </div>
+          <div class="col-2">
+            <img src="image/021-snowflake.png" alt="snowflake" width="50px" />
+            <h6>Tuesday</h6>
+            20 °C
+          </div>
+          <div class="col-2">
+            <img src="image/021-night.png" alt="night sky" width="50px" />
+            <h6>Wednesday</h6>
+            19 °C
+          </div>
+          <div class="col-2">
+            <img src="image/021-sun.png" alt="sun" width="50px" />
+            <h6>Thursday</h6>
+            19 °C
+          </div>
+          <div class="col-2">
+            <img src="image/021-tornado.png" alt="tornado" width="50px" />
+            <h6>Friday</h6>
+            18 °C
+          </div>
+          <div class="col-2">
+            <img src="image/021-snowing-3.png" alt="snowing" width="50px" />
+            <h6>Saturday</h6>
+            17 °C
+          </div>
         </div>
-        <hr />
-        <footer>
-            <p class="author">
-                <small>Coded by
-                    <a href="https://www.linkedin.com/in/ajda-flajs-a69312190/">Ajda Flajs</a>
-                    <br />
-                    Icons made by
-                    <a href="https://www.flaticon.com/authors/linector" title="Linector">Linector</a>
-                    from
-                    <a href="https://www.flaticon.com/" title="Flaticon">
-                        www.flaticon.com</a>
-                </small>
-            </p>
-        </footer>
+      </div>
+      <hr />
+      <footer>
+        <p class="author">
+          <small
+            >Coded by
+            <a href="https://www.linkedin.com/in/ajda-flajs-a69312190/"
+              >Ajda Flajs</a
+            >
+            <br />
+            <a href="https://github.com/ajdaflajs/first-weather-app"
+              >Open-source</a
+            >
+            <br />
+            Icons made by
+            <a href="https://www.flaticon.com/authors/linector" title="Linector"
+              >Linector</a
+            >
+            from
+            <a href="https://www.flaticon.com/" title="Flaticon">
+              www.flaticon.com</a
+            >
+          </small>
+        </p>
+      </footer>
     </div>
 
     <script src="src/index.js"></script>
-</body>
-
+  </body>
 </html>
