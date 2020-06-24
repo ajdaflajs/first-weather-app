@@ -20,12 +20,9 @@
   background-color: white;
 }
 
-.searchMap {
-  text-align: right;
-}
-
 .currentLocationButton {
   display: block;
+  margin: -5px;
 }
 
 button {
@@ -34,8 +31,8 @@ button {
   border: 2px solid;
   border-radius: 10px;
   padding: 5px;
-  color: white;
-  background-color: #6fcbeb;
+  color: black;
+  background-color: white;
 }
 
 .currentWeatherForecast,
@@ -74,6 +71,7 @@ button {
 
 .city {
   text-decoration: underline;
+  font-size: 40px;
 }
 
 .author {
