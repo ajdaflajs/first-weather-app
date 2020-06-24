@@ -1,4 +1,4 @@
-//challnge 1 HTML/CSS to JS
+//time and date
 let now = new Date();
 let currentDay = document.querySelector("h5#current-day");
 let days = [
@@ -18,12 +18,14 @@ let minutes = now.getMinutes();
 currentDay.innerHTML = `${day}`;
 currentTime.innerHTML = `${hours}:${minutes}`;
 
+//functions search city
 function search(event) {
   event.preventDefault();
   let city = document.querySelector("#input-search-city").value;
   showCity(city);
 }
 
+//function current weather and temperature
 function showCurrentWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -31,12 +33,14 @@ function showCurrentWeather(response) {
   );
 }
 
+// function show city
 function showCity(city) {
   let apiKey = "91dd9571694065e99a37dfcdc3f1bcb5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showCurrentWeather);
 }
 
+//function show location and current location
 function showLocation(position) {
   let apiKey = "91dd9571694065e99a37dfcdc3f1bcb5";
   let lat = position.coords.latitude;
@@ -50,13 +54,14 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 
+//form and buttons
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-//bonus (C to F conversion link and back)
+//C to F  and F to C conversion links
 //function convertToFahrenheit(event) {
 //event.preventDefault();
 //let temperatureElement = document.querySelector("#temperature");
