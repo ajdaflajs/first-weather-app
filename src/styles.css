@@ -44,6 +44,8 @@ button {
   padding: 5px;
   color: black;
   background-color: white;
+  position: relative;
+  right: -18px;
 }
 
 .currentWeatherForecast,
@@ -92,7 +94,7 @@ button {
 }
 
 .city {
-  text-decoration: underline;
+  text-decoration: none;
   font-size: 40px;
 }
 
