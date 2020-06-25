@@ -11,7 +11,7 @@ let days = [
   "Saturday",
 ];
 let day = days[now.getDay()];
-let currentTime = document.querySelector("h6#current-time");
+let currentTime = document.querySelector("h5#current-time");
 let hours = now.getHours();
 let minutes = now.getMinutes();
 
