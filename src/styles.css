@@ -57,6 +57,7 @@ button {
 .currentWeatherForecast {
   margin-left: 40px;
   margin-right: 40px;
+  margin-top: 30px;
 }
 
 .currentWeatherIcon {
@@ -66,12 +67,14 @@ button {
   width: 130px;
   border-radius: 65px;
 }
-
+.currentWeatherInformation {
+  margin: 12px;
+}
 .celsiusLink,
 .fahrenheitLink {
   font-size: 16px;
   position: relative;
-  top: -12px;
+  top: -20px;
 }
 
 .fahrenheitLink {
@@ -98,6 +101,9 @@ button {
   font-size: 40px;
 }
 
+.temperature {
+  font-size: 40px;
+}
 .author {
   text-align: center;
   font-size: 10px;
