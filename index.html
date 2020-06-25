@@ -3,13 +3,14 @@
   <head>
     <title>WeatherApp</title>
     <meta charset="UTF-8" />
-    <link href="src/styles.css" />
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link href="src/styles.css" />
     <link rel="stylesheet" href="src/styles.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script
@@ -53,22 +54,33 @@
       </header>
       <div class="currentWeatherForecast">
         <div class="row">
-          <div class="col-2">
+          <div class="col-4">
             <div class="currentWeatherIcon">
               <img src="image/021-cloud.png" alt="cloudy" width="100px" />
             </div>
           </div>
-          <div class="col-10">
+          <div class="col-8">
             <h3 class="city" id="current-city"></h3>
-            <br />
-            <h2 class="temperature">
-              <strong><span id="temperature"></span></strong>
-              <span>
-                <a href="a" id="celsius-link">°C</a> |
-                <a href="a" id="fahrenheit-link">°F</a></span
-              >
-            </h2>
-            <br />
+            <div class="row">
+              <div class="col-6">
+                <h2 class="temperature">
+                  <strong><span id="temperature"></span></strong>
+                  <span class="celsius-link"
+                    ><a href="a" id="celsius-link">°C</a></span
+                  >
+                  |
+                  <span class="fahrenheit-link"
+                    ><a href="a" id="fahrenheit-link">°F</a></span
+                  >
+                </h2>
+              </div>
+              <div class="col-6">
+                <li>
+                  <strong>Humidity:</strong><span id="humidity-element"></span>
+                </li>
+                <li><strong>Wind:</strong><span id="wind-element"></span></li>
+              </div>
+            </div>
             <h5 class="currentDay" id="current-day">Sunday</h5>
             <h6 class="currentTime" id="current-time">
               <span id="current-hours">13</span>:<span id="current-minutes"
