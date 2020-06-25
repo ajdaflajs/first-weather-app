@@ -1,24 +1,6 @@
-//function showDate(timestamp) {
-// let date = new Date(timestamp);
-// let hours = date.getHours();
-//   if (hours < 10) {
-//     hours = `0${hours}`;
-// }
-// let minutes = date.getMinutes();
-//   if (minutes < 10) {
-//     minutes = `0${minutes}`;
-// }
-// let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-// let day = days[date.getDay()];
-// return `${} ${}:${}`
-//}
-
-//let dateElement = document.querySelector("#date");
-//dateElement.innerHTML = showDate(response.data.dt * 1000);
-
 //time and date
+
 let now = new Date();
-let currentDay = document.querySelector("h5#current-day");
 let days = [
   "Sunday",
   "Monday",
@@ -29,17 +11,19 @@ let days = [
   "Saturday",
 ];
 let day = days[now.getDay()];
-let currentTime = document.querySelector("h5#current-time");
 let hours = now.getHours();
-//   if (hours < 10) {
-//     hours = `0${hours}`;
-// }
+if (hours < 10) {
+  hours = `0${hours}`;
+}
 let minutes = now.getMinutes();
-//   if (minutes < 10) {
-//     minutes = `0${minutes}`;
-// }
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 
+let currentDay = document.querySelector("h5#current-day");
 currentDay.innerHTML = `${day}`;
+
+let currentTime = document.querySelector("h5#current-time");
 currentTime.innerHTML = `${hours}:${minutes}`;
 
 //functions search city
@@ -53,8 +37,9 @@ function search(event) {
 function showCurrentWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
+    celsiusTemperature
   );
+  let celsiusTemperature = response.data.main.temp;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -93,7 +78,7 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  let fahrenheitTemperature = (temperatureElement.innerHTML * 9) / 5 + 32;
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
@@ -102,6 +87,8 @@ function convertToFahrenheit(event) {
 //let temperatureElement = document.querySelector("#temperature");
 //temperatureElement.innerHTML = 19;
 //}
+
+let celsiusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
