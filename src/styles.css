@@ -63,7 +63,12 @@ button {
 
 .celsiusLink,
 .fahrenheitLink {
-  font-size: 5px;
+  font-size: 15px;
+  margin-top: -50px;
+}
+
+.fahrenheitLink {
+  margin-left: -5px;
 }
 
 .futureWeatherForecast {
