@@ -5,6 +5,10 @@ li {
   list-style: none;
 }
 
+h5 {
+  font-size: 16px;
+}
+
 .container {
   border: 2px solid;
   border-radius: 10px;
@@ -63,7 +67,7 @@ button {
 
 .celsiusLink,
 .fahrenheitLink {
-  font-size: 15px;
+  font-size: 16px;
   position: relative;
   top: -12px;
 }
