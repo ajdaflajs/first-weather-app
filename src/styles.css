@@ -38,14 +38,14 @@ h5 {
 
 button {
   display: block;
-  margin-top: 5px;
+  position: relative;
+  right: 5px;
+  top: 5px;
   border: 2px solid;
   border-radius: 10px;
   padding: 5px;
   color: black;
   background-color: white;
-  position: relative;
-  right: -18px;
 }
 
 .currentWeatherForecast,
