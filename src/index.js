@@ -13,6 +13,7 @@
 // return `${} ${}:${}`
 //}
 
+//let dateElement = document.querySelector("#date");
 //dateElement.innerHTML = showDate(response.data.dt * 1000);
 
 //time and date
