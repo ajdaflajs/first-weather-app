@@ -1,3 +1,20 @@
+//function showDate(timestamp) {
+// let date = new Date(timestamp);
+// let hours = date.getHours();
+//   if (hours < 10) {
+//     hours = `0${hours}`;
+// }
+// let minutes = date.getMinutes();
+//   if (minutes < 10) {
+//     minutes = `0${minutes}`;
+// }
+// let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+// let day = days[date.getDay()];
+// return `${} ${}:${}`
+//}
+
+//dateElement.innerHTML = showDate(response.data.dt * 1000);
+
 //time and date
 let now = new Date();
 let currentDay = document.querySelector("h5#current-day");
@@ -13,7 +30,13 @@ let days = [
 let day = days[now.getDay()];
 let currentTime = document.querySelector("h5#current-time");
 let hours = now.getHours();
+//   if (hours < 10) {
+//     hours = `0${hours}`;
+// }
 let minutes = now.getMinutes();
+//   if (minutes < 10) {
+//     minutes = `0${minutes}`;
+// }
 
 currentDay.innerHTML = `${day}`;
 currentTime.innerHTML = `${hours}:${minutes}`;
@@ -25,15 +48,19 @@ function search(event) {
   showCity(city);
 }
 
-//function current weather and temperature
+//function current weather, temperature, wind, humidity
 function showCurrentWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
 
-// function show city
+// function showCity
 function showCity(city) {
   let apiKey = "91dd9571694065e99a37dfcdc3f1bcb5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
