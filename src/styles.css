@@ -64,7 +64,8 @@ button {
 .celsiusLink,
 .fahrenheitLink {
   font-size: 15px;
-  margin-top: -50px;
+  position: relative;
+  top: -12px;
 }
 
 .fahrenheitLink {
