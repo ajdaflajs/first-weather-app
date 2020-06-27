@@ -78,9 +78,14 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 //C to F  and F to C conversion links
+
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  //remove the active class the celsius link
+  celsiusLink.classList.remove("active");
+  //add the active class the fahrenheit link
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
@@ -88,6 +93,11 @@ function convertToFahrenheit(event) {
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+
+  //remove the active class the fahrenheit link
+  fahrenheitLink.classList.remove("active");
+  //add the active class the celsius link
+  celsiusLink.classList.add("active");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
