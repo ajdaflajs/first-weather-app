@@ -99,6 +99,10 @@ button {
   position: relative;
 }
 
+.futureDay {
+  margin-top: 10px;
+}
+
 .city,
 .temperature,
 .currentDay,
