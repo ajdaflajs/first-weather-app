@@ -61,11 +61,8 @@ button {
 }
 
 .currentWeatherIcon {
-  background: white;
-  padding: 15px;
-  height: 130px;
-  width: 130px;
-  border-radius: 65px;
+  display: block;
+  padding-left: 25px;
 }
 .currentWeatherInformation {
   margin: 12px;

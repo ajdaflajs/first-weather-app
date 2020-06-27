@@ -33,7 +33,7 @@ function search(event) {
   showCity(city);
 }
 
-//function current weather, temperature, wind, humidity
+//function current weather, temperature, wind, humidity, icon
 function showCurrentWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
   celsiusTemperature = response.data.main.temp;
@@ -44,9 +44,14 @@ function showCurrentWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+
   let iconElement = document.querySelector("#icon");
-  iconElement.innerHTML = "";
-  iconElement.setAttribute;
+  weatherIcon = response.data.weather[0].icon;
+
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
+  );
 }
 
 // function showCity
@@ -56,7 +61,7 @@ function showCity(city) {
   axios.get(apiUrl).then(showCurrentWeather);
 }
 
-//function show location and current location
+//function show location and get current location
 function showLocation(position) {
   let apiKey = "91dd9571694065e99a37dfcdc3f1bcb5";
   let lat = position.coords.latitude;
