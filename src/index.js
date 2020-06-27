@@ -36,17 +36,17 @@ function search(event) {
 //function current weather, temperature, wind, humidity
 function showCurrentWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
-
   celsiusTemperature = response.data.main.temp;
-
   document.querySelector("#temperature").innerHTML = Math.round(
     celsiusTemperature
   );
-
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  let iconElement = document.querySelector("#icon");
+  iconElement.innerHTML = "";
+  iconElement.setAttribute;
 }
 
 // function showCity
@@ -78,7 +78,6 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 //C to F  and F to C conversion links
-
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
@@ -93,7 +92,6 @@ function convertToFahrenheit(event) {
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-
   //remove the active class the fahrenheit link
   fahrenheitLink.classList.remove("active");
   //add the active class the celsius link
@@ -108,3 +106,5 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
+
+showCity("Ljubljana");
