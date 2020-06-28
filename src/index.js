@@ -1,30 +1,4 @@
-//time and date
-
-let now = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-
-let currentDay = document.querySelector("h5#current-day");
-currentDay.innerHTML = `${day}`;
-
-let currentTime = document.querySelector("h5#current-time");
-currentTime.innerHTML = `${hours}:${minutes}`;
+//FUNCTIONS
 
 //functions search city
 function search(event) {
@@ -104,6 +78,35 @@ function convertToCelsius(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+//time and date
+
+let now = new Date();
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let day = days[now.getDay()];
+let hours = now.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
+let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+
+let currentDay = document.querySelector("h5#current-day");
+currentDay.innerHTML = `${day}`;
+
+let currentTime = document.querySelector("h5#current-time");
+currentTime.innerHTML = `${hours}:${minutes}`;
+
+// Celsius and Fahrenheit conversion
 let celsiusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
