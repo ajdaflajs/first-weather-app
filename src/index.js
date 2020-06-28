@@ -53,11 +53,18 @@ function showForecast(response) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
     <div class="col-2">
+       
       <img src="http://openweathermap.org/img/wn/${
         forecast.weather[0].icon
-      }@2x.png" />
-      <h6 class="futureDay">${formateHours(forecast.dt * 1000)}</h6>
-      <h4>${Math.round(forecast.main.temp)}°C</h4>
+      }@2x.png" style="position:absolute" />
+      <h6 class="futureHours"><small>${formateHours(
+        forecast.dt * 1000
+      )}</small></h6>
+      <h4><strong>${Math.round(forecast.main.temp)}°</strong></h4>
+     
+      
+     
+      
     </div>
   `;
   }

@@ -9,6 +9,18 @@ h5 {
   font-size: 16px;
 }
 
+button {
+  display: block;
+  position: relative;
+  right: 5px;
+  top: 5px;
+  border: 2px solid;
+  border-radius: 15px;
+  padding: 5px;
+  color: rgb(82, 75, 75);
+  background-color: transparent;
+}
+
 .container {
   border: 2px solid;
   border-radius: 20px;
@@ -22,6 +34,10 @@ h5 {
   padding: 10px;
   width: 600px;
   margin: 20px;
+}
+
+.futureWeatherForecast img {
+  padding-left: -20px;
 }
 
 .searchCity,
@@ -38,22 +54,16 @@ h5 {
   margin: -5px;
 }
 
-button {
-  display: block;
-  position: relative;
-  right: 5px;
-  top: 5px;
-  border: 2px solid;
-  border-radius: 15px;
-  padding: 5px;
-  color: rgb(82, 75, 75);
-  background-color: transparent;
-}
-
 .currentWeatherForecast,
 .futureWeatherForecast {
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.futureWeatherForecast {
+  margin-left: 0px;
+  margin-right: 0px;
+  display: box;
 }
 
 .currentWeatherForecast {
@@ -91,16 +101,6 @@ button {
 
 .fahrenheitLink {
   margin-left: -5px;
-}
-
-.futureWeatherForecast {
-  margin-left: 10px;
-  margin-right: 10px;
-  position: relative;
-}
-
-.futureDay {
-  margin-top: 10px;
 }
 
 .city,
