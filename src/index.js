@@ -1,6 +1,6 @@
 //FUNCTIONS
 
-//functions search city
+//functions search
 function search(event) {
   event.preventDefault();
   let city = document.querySelector("#input-search-city").value;
@@ -28,11 +28,30 @@ function showCurrentWeather(response) {
   );
 }
 
+//forcast (future days)
+
+function showForecast(response) {
+  let forecatElement = document.querySelector("#forecast");
+  let forecast = response.data.list[0];
+  console.log(forecast);
+
+  forecastElement.innerHTML = `
+    <div class="col-2">
+          <img src="image/021-rain-1.png" alt="rain" width="50px" />
+          <h6 class="futureDay">Mon</h6>
+          <h4>21 °C</h4>
+        </div>
+  `;
+}
+
 // function showCity
 function showCity(city) {
   let apiKey = "91dd9571694065e99a37dfcdc3f1bcb5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showCurrentWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
 }
 
 //function show location and get current location
