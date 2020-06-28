@@ -30,18 +30,37 @@ function showCurrentWeather(response) {
 
 //forcast (future days)
 
-function showForecast(response) {
-  let forecatElement = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
-  console.log(forecast);
+function formateHours(timestamp) {
+  let now = new Date(timestamp);
 
-  forecastElement.innerHTML = `
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
+function showForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
     <div class="col-2">
-          <img src="image/021-rain-1.png" alt="rain" width="50px" />
-          <h6 class="futureDay">Mon</h6>
-          <h4>21 °C</h4>
-        </div>
+      <img src="http://openweathermap.org/img/wn/${
+        forecast.weather[0].icon
+      }@2x.png" />
+      <h6 class="futureDay">${formateHours(forecast.dt * 1000)}</h6>
+      <h4>${Math.round(forecast.main.temp)}°C</h4>
+    </div>
   `;
+  }
 }
 
 // function showCity
